@@ -1680,13 +1680,11 @@
      !    if it is time to write a restart file, but not time to write a
      !      *regular* tavg file, then write a *restart* tavg file
 
-#ifndef _HIRES
      if (trim(restart_type) /= 'none' .and. .not. ltavg_write_reg) then
        ltavg_write_rest = .true.
        ! do not write to previously open file -- write to restart instead
        tavg_streams(ns)%ltavg_file_is_open = .false.
      endif
-#endif
 
      !*** do not write a restart tavg file for a one-time stream
 
@@ -7792,7 +7790,7 @@
 
    !*** compute areas for each region to be used later for normalization
    do n_reg=1,n_reg_0D
-     SAVG_0D_AREA(n_reg) = global_sum(TAREA(:,:,:),distrb_clinic,  &
+     SAVG_0D_AREA(n_reg) = global_sum(TAREA(:,:,1:nblocks_clinic),distrb_clinic,  &
                               field_loc_center,SAVG_0D_MASK(:,:,:,n_reg) )
      if ( SAVG_0D_AREA(n_reg) == c0 ) then
        exit_string = 'FATAL ERROR: SAVG_0D_AREA is zero.'
