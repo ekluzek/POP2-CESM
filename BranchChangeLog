@@ -1,4 +1,75 @@
 ===============================================================================
+Tag Creator:  mlevy
+Developers:   mlevy
+Tag Date:     21 Jan 2020
+Tag Name:     pop2_cesm2_1_rel_n09
+Tag Summary:  Add BranchChangeLog update
+
+Testing: None (only modified this file)
+
+M       BranchChangeLog
+
+===============================================================================
+Tag Creator:  mlevy
+Developers:   klindsay
+Tag Date:     21 Jan 2020
+Tag Name:     pop2_cesm2_1_rel_n08
+Tag Summary:  Add support for CMIP6 OMIP compsets
+
+Testing: aux_pop, cheyenne/intel. Answer-changing for all C & G compsets except
+         OCN_GRID=gx3v7, CORE normal year forcing, and no ecosys (bit-for-bit
+         with OMIP submissions)
+
+M       bld/build-namelist
+M       bld/namelist_files/namelist_defaults_pop.xml
+M       bld/namelist_files/namelist_definition_pop.xml
+M       cime_config/config_component.xml
+M       cime_config/config_compsets.xml
+M       cime_config/testdefs/testlist_pop.xml
+M       cime_config/testdefs/testmods_dirs/pop/ecosys_cesm2_0_settings/shell_commands
+M       cime_config/testdefs/testmods_dirs/pop/omip/include_user_mods
+M       cime_config/testdefs/testmods_dirs/pop/omip/shell_commands
+M       cime_config/testdefs/testmods_dirs/pop/omip/user_nl_pop
+M       source/ecosys_forcing_mod.F90
+M       source/forcing_timeseries_mod.F90
+
+===============================================================================
+Tag Creator:  altuntas
+Developers:   bryan
+Tag Date:     14 Jan 2020
+Tag Name:     pop2_cesm2_1_rel_n07
+Tag Summary:  Added a patch for closing the momentum budget: The full (implicit+explicit)
+              vertical stress (at cell bottoms) in (VUF,VVF) is now may be saved by the user.
+
+Testing: aux_pop, cheyenne/intel. (b4b)
+
+M       source/baroclinic.F90
+M       source/vertical_mix.F90
+
+===============================================================================
+Tag Creator:  altuntas
+Developers:   klindsay
+Tag Date:     30 May 2019
+Tag Name:     pop2_cesm2_1_rel_n06
+Tag Summary:  Point to Historical Carbon isotope files that are in NetCDF-3 
+              format rather than NetCDF-4 format. 
+
+Testing: ERS_Ld30.T62_g37.C1850ECO.cheyenne_intel.pop-ciso_transient_abio_dic_dic14_transient (b4b)
+
+M       bld/namelist_files/namelist_defaults_pop.xml
+
+===============================================================================
+Tag Creator:  altuntas
+Developers:   altuntas
+Tag Date:     28 May 2019
+Tag Name:     pop2_cesm2_1_rel_n05
+Tag Summary:  Fix rpointer logic and marb_in gen for multi-instance runs
+
+Testing: aux_pop and aux_pop_MARBL (b4b)
+
+M       cime_config/buildnml
+
+===============================================================================
 Tag Creator:  klindsay
 Developers:   klindsay
 Tag Date:     12 Apr 2019
